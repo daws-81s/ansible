@@ -1,6 +1,8 @@
 - name: create ec2 and r53 records
   hosts: local
   connection: local
+  # assignment
+  # move this to vars_files
   vars:
     subnet_id: subnet-09863c54177764565 # replace with your subnet id
     sg_id: "sg-09a300a3729062c5a"
@@ -11,6 +13,12 @@
     - frontend
     zone: daws81s.online
   tasks:
+  - name: ansible to install boto3 and botocore
+    ansible.builtin.pip:
+      name:
+      - boto3
+      - botocore
+      executable: pip3.9
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "{{ item }}"
