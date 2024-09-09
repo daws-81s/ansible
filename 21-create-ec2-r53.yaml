@@ -4,11 +4,11 @@
   # assignment
   # move this to vars_files
   vars:
-    subnet_id: subnet-09863c54177764565 # replace with your subnet id
+    subnet_id: "subnet-09863c54177764565" # replace with your subnet id
     sg_id: "sg-09a300a3729062c5a"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
-    - mysql
+    - mysqlllll
     - backend
     - frontend
     zone: daws81s.online
@@ -57,4 +57,4 @@
       wait: true
       overwrite: true
     loop: "{{ ec2_instances.results }}"
-    when: item.item == "frontend"
+    when: item.item == "frontend" #when keyword should not have {{}}
