@@ -8,7 +8,7 @@
     sg_id: "sg-09a300a3729062c5a"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
-    - mysqlllll
+    - mysql
     - backend
     - frontend
     zone: daws81s.online
